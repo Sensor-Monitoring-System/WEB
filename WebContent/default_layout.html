@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+ <nav class="navbar navbar-inverse">
+  <div class="container-fluid" >
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Sensor Monitoring</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="home.html">Home</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="graph_temp.html">온도 센서
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">현재 온도</a></li>
+          <li><a href="graph_temp.html">온도 그래프</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="graph_wet.html">습도 센서
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">현재 습도</a></li>
+          <li><a href="graph_wet.html">습도 그래프</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">초음파 센서
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">현재 초음파 상태</a></li>
+          <li><a href="#">초음파 그래프</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="graph_air.html">미세먼지 센서
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">현재 미세먼지 농도</a></li>
+          <li><a href="graph_air.html">미세먼지 그래프</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="graph_lux.html">조도 센서
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">현재 조도</a></li>
+          <li><a href="graph_lux.html">조도 그래프</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+</head>
+<body>
+</body>
+</html>

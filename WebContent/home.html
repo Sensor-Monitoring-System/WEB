@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--각 기능별 성격이나 설명에 대해서 넣어줄 예정-->
+<head>
+  <title>Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  
+
+<style>
+  body {
+    position: relative;
+  }
+  ul.nav-pills {
+    top: 20px;
+    position: fixed;
+  }
+  div.col-sm-9 div {
+    height: 250px;
+    font-size: 28px;
+  }
+ 
+<!-- #section1 {color: #fff; background-color: #1E88E5;} 진한 하늘-->
+  <!--#section2 {color: #fff; background-color: #673ab7;} 보라-->
+ <!-- #section3 {color: #fff; background-color: #ff9800;} 주황-->
+ <!-- #section41 {color: #fff; background-color: #00bcd4;} 연한 하늘-->
+ <!-- #section42 {color: #fff; background-color: #009688;} 초록-->
+  
+  @media screen and (max-width: 810px) {
+    #section1, #section2, #section3, #section41, #section42  {
+      margin-left: 150px;
+    }
+  }
+  </style>
+   <nav class="navbar navbar-inverse">
+  <div class="container-fluid" >
+    <div class="navbar-header">
+      <a class="navbar-brand" href="./Sensor_monitor.html">Sensor Monitoring</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="./home.html">Home</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="./graph_temp.html">온도 센서
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">현재 온도</a></li>
+          <li><a href="./graph_temp.html">온도 그래프</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="./graph_wet.html">습도 센서
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">현재 습도</a></li>
+          <li><a href="./graph_wet.html">습도 그래프</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">초음파 센서
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">현재 초음파 상태</a></li>
+          <li><a href="#">초음파 그래프</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="./graph_air.html">미세먼지 센서
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">현재 미세먼지 농도</a></li>
+          <li><a href="./graph_air.html">미세먼지 그래프</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="./graph_lux.html">조도 센서
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">현재 조도</a></li>
+          <li><a href="./graph_lux.html">조도 그래프</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+</head>
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="40">
+<div class="container">
+  <div class="row">
+    <nav class="col-sm-3" id="myScrollspy">
+      <ul class="nav nav-pills nav-stacked" style="margin:50px">
+        <li class="active"><a href="#section2">온도</a></li>
+        <li><a href="#section3">습도</a></li>
+        <li><a href="#section4">근접</a></li>
+        <li><a href="#section5">미세먼지</a></li>
+        <li><a href="#section6">조도</a></li>
+      </ul>
+    </nav>
+    <div class="col-sm-9">
+      <div id="section2">    
+        <h1>온도</h1>
+        <p>하루동안, 일주일동안, 한달 동안 센서로 받아온 온도의 어떻게 변화되어 왔는지 그래프로 나타내주는 기능을 가진 페이지가 될 것이다.</p>
+      </div>
+      <div id="section3"> 
+        <h1>습도</h1>
+        <p>실내의 어떤 적정한 습도 값이 있을 것인데, 그 습도의 값보다 낮아지게 될 경우 건조해졌음을 나타내주는 형태도 가질 수 있을 것이고 그에 따른 어떤 불쾌지수에 대해서도 알려줄 수 있을 것이다. 이것도 역시 그래프로서 누적 데이터를 그래프로 나타내 줄 것이다.</p>
+      </div>        
+      <div id="section4">         
+        <h1>근접</h1>
+        <p>집 안에 사람이 있는지 없는지 확인해 주는 형태로 무단 침입에 대한 보안의 확인을 시켜줄 수 있는 페이지가 될 것이다.</p>
+      </div>
+      <div id="section5">         
+        <h1>미세먼지</h1>
+        <p>미세먼지가 일정 수치 이상 올라가게 되면 환기를 시킬 것을 요청하는 문구가 나타나는 페이지가 될 것이다. 이것도 역시 그래프로서 누적 데이터를 그래프로 나타내 줄 것이다.</p>
+      </div>      
+      <div id="section6">         
+        <h1>조도</h1>
+        <p>집안이 너무 어두울 경우에 불을 켜도록 권장하는 문구가 나타나는 페이지의 역할을 할 것이다.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
