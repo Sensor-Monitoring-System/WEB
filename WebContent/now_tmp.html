@@ -1,0 +1,34 @@
+<html>
+ <head>
+  <meta charset="UTF-8"/>
+  <title>JSON 파싱</title>
+ 
+  <style> </style>
+  
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  
+  <script>
+  
+  //$(function(){})의 기능은 body의 구조를 파악하자 마자
+     $(function(){
+    	$.ajax({
+    	 url: "http://124.80.117.37:80/client/temperature/current",
+     	dataType: "json",
+    	 success: function(data){
+     	 //json의 경우는 data는 파싱된 결과
+     	 //alert(data[0].num);
+     	 $.each(data, function(index, item){
+     	  alert(item.key + ":" +item.value);
+        })
+      }
+    })
+   })
+  </script>
+  
+  
+   </head>
+ <body>
+  
+ </body>
+ 
+</html>

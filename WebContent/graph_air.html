@@ -88,7 +88,7 @@
         var chartData = '';
  
         //날짜형식 변경하고 싶으시면 이 부분 수정하세요.
-        var chartDateformat     = 'yyyy년MM월dd일';
+        var chartDateformat     = 'yyyy년MM월dd일HH시mm분';
         //라인차트의 라인 수
         var chartLineCount    = 10;
         //컨트롤러 바 차트의 라인 수
@@ -100,24 +100,22 @@
           var data = new google.visualization.DataTable();
           //그래프에 표시할 컬럼 추가
           data.addColumn('datetime' , '날짜');
-          data.addColumn('number'   , '최저 미세먼지 농도');
-          data.addColumn('number'   , '최고 미세먼지 농도');
+          data.addColumn('number'   , '미세먼지 농도');
  
           //그래프에 표시할 데이터
           var dataRow = [];
  
-          for(var i = 1; i <= 30; i++){ //랜덤 데이터 생성
-            var temp = Math.floor(Math.random() * 150)
-        	var max_dirty   = temp + 1;
-            var min_dirty     = Math.floor(Math.random() * temp) + 1;
+          for(var i = 0; i <= 24; i++){ //랜덤 데이터 생성
+        	  for(var j=0; j<=60; j=j+10){
+           		 var temp = Math.floor(Math.random() * 150);
+        		 var max_dirty   = temp + 1;
+           		 //하루 10분마다 값을 측정한 형태
+           		 dataRow = [new Date('2019', '11', '22' , i, j),  max_dirty]; 
+                 data.addRow(dataRow);
             <!--var woman   = total - man;-->
- 
-	 //(년,월,일,시작 시간 인데 한달 전으로 해서 입력해야 맞음) , 그래프 항목 개수에 맞게
-            dataRow = [new Date('2019', '11', i , '0'), min_dirty,  max_dirty]; 
-            data.addRow(dataRow);
+        	  }
           }
- <!--woman ,-->
- 
+
             var chart = new google.visualization.ChartWrapper({
               chartType   : 'LineChart',
               containerId : 'lineChartArea', //라인 차트 생성할 영역
@@ -133,9 +131,11 @@
                                                                   years : {format: ['yyyy년']},
                                                                   months: {format: ['MM월']},
                                                                   days  : {format: ['dd일']},
-                                                                  hours : {format: ['HH시']}}
+                                                                  hours : {format: ['HH시']},
+                                                                  minutes : {format: ['mm분']}}
                                                                 },textStyle: {fontSize:12}},
                 vAxis              : {minValue: 200,viewWindow:{min:0},gridlines:{count:-1},textStyle:{fontSize:12}},
+              //minValue 값이 아무리 작게 나와도 그래프 최대치가 50아래로 내려갈 수 없는 것을 의미함 , min:그래프의 최소로 표시될 수 있는 수치      
                 animation        : {startup: true,duration: 1000,easing: 'in' },
                 annotations    : {pattern: chartDateformat,
                                 textStyle: {
@@ -164,7 +164,8 @@
                                   years : {format: ['yyyy년']},
                                   months: {format: ['MM월']},
                                   days  : {format: ['dd일']},
-                                  hours : {format: ['HH시']}}
+                                  hours : {format: ['HH시']},
+                                  minutes : {format:['mm분']}}
                             }}
                         }
                   },
